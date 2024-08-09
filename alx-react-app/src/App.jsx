@@ -6,7 +6,7 @@ import WelcomeMessage from './components/WelcomeMessage';  // Import statement f
 import UserProfile from './components/UserProfile';
 function App() {
     return (
-        <div className="App">
+        <div> className="App"
             <Header />
             <WelcomeMessage />  {/* Usage of WelcomeMessage component */}
             <MainContent />
