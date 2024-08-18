@@ -1,9 +1,3 @@
-// src/UserContext.js
-import React, { createContext } from 'react';
-
-const UserContext = createContext();
-
-export const UserProvider = UserContext.Provider;
 // src/UserDetails.jsx
 import React, { useContext } from 'react';
 import UserContext from './UserContext';
@@ -19,4 +13,5 @@ function UserDetails() {
   );
 }
 
-export default UserContext;
+export default UserDetails;
+
