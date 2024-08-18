@@ -7,17 +7,18 @@ import UserProfile from './components/UserProfile.jsx';
 // src/App.jsx
 import React from 'react';
 import ProfilePage from './ProfilePage';
-import { UserProvider } from './UserContext';
+import { UserProvider } from './UserContext';  // Import UserProvider
 
 function App() {
   const userData = { name: "Jane Doe", email: "jane.doe@example.com" };
 
   return (
-    <UserProvider value={userData}>
+    <UserProvider value={userData}>  {/* Wrap ProfilePage with UserProvider */}
       <ProfilePage />
     </UserProvider>
   );
 }
+
 
 function App() {
     return (
