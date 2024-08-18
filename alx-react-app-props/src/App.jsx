@@ -7,7 +7,7 @@ import WelcomeMessage from './components/WelcomeMessage';  // Import statement f
 // src/App.jsx
 import React from 'react';
 import ProfilePage from './ProfilePage';
-import { UserProvider } from './UserContext'; // Import UserProvider
+import { UserContextProvider } from './UserContext'; // Import UserProvider
 
 function App() {
   const userData = { name: "Jane Doe", email: "jane.doe@example.com" };
