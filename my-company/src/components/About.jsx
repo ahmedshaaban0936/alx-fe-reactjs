@@ -1,4 +1,3 @@
-// src/pages/About.jsx
 function About() {
     return (
       <div style={{ padding: '20px' }}>
@@ -7,6 +6,5 @@ function About() {
       </div>
     );
   }
-  
+
   export default About;
-  
