@@ -4,6 +4,20 @@ import MainContent from './components/MainContent';
 import Footer from './components/Footer';
 import WelcomeMessage from './components/WelcomeMessage';  // Import statement for WelcomeMessage
 import UserProfile from './components/UserProfile.jsx';
+// src/App.jsx
+import React from 'react';
+import Counter from './components/Counter';
+
+function App() {
+  return (
+    <div className="App">
+      <h1>Counter Application</h1>
+      <Counter />
+    </div>
+  );
+}
+
+
 function App() {
     return (
         <div> className="App"
