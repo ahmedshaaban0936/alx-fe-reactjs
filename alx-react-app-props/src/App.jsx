@@ -3,13 +3,20 @@ import Header from './components/Header';
 import MainContent from './components/MainContent';
 import Footer from './components/Footer';
 import WelcomeMessage from './components/WelcomeMessage';  // Import statement for WelcomeMessage
-import UserProfile from './components/UserProfile.jsx';
+
+// src/App.jsx
+import React from 'react';
 import ProfilePage from './ProfilePage';
+import { UserProvider } from './UserContext'; // Import UserProvider
 
 function App() {
   const userData = { name: "Jane Doe", email: "jane.doe@example.com" };
 
-  return <ProfilePage userData={userData} />;
+  return (
+    <UserProvider value={userData}>  {/* Provide the context value */}
+      <ProfilePage />
+    </UserProvider>
+  );
 }
 
 
