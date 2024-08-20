@@ -11,6 +11,20 @@ import SearchBar from './components/SearchBar';
 
 function App() {
   return (
+    <Router>
+      <div className="App">
+        <SearchBar />
+        <Routes>
+          <Route path="/" element={<RecipeList />} />
+          <Route path="/recipes/:id" element={<RecipeDetails />} />
+        </Routes>
+      </div>
+    </Router>
+  );
+}
+
+function App() {
+  return (
     <div className="App">
       <SearchBar />
       <RecipeList />
