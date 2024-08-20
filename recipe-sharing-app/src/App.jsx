@@ -7,7 +7,16 @@ import RecipeList from './components/RecipeList';
 import AddRecipeForm from './components/AddRecipeForm';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import RecipeDetails from './components/RecipeDetails';
+import SearchBar from './components/SearchBar';
 
+function App() {
+  return (
+    <div className="App">
+      <SearchBar />
+      <RecipeList />
+    </div>
+  );
+}
 function App() {
   return (
     <Router>
