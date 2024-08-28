@@ -12,13 +12,13 @@ const FormikForm = () => {
       }}
       validationSchema={Yup.object({
         username: Yup.string()
-          .required('Username is required'), // Validation for username
+          .required('Username is required'), // Ensures the username field is a string and is required
         email: Yup.string()
           .email('Invalid email address')
-          .required('Email is required'), // Validation for email
+          .required('Email is required'), // Ensures the email field is a string and is required
         password: Yup.string()
           .min(6, 'Password must be at least 6 characters')
-          .required('Password is required'), // Validation for password
+          .required('Password is required'), // Ensures the password field is a string and is required
       })}
       onSubmit={(values) => {
         console.log('Form Submitted:', values);
