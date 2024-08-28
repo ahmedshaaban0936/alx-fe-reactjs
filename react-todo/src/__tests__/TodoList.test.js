@@ -6,6 +6,7 @@ import TodoList from '../components/TodoList';
 test('renders TodoList component', () => {
   render(<TodoList />);
   expect(screen.getByPlaceholderText(/Add a new todo/i)).toBeInTheDocument();
+  // Assuming there's a default todo for testing
   expect(screen.getByText(/Learn React/i)).toBeInTheDocument();
 });
 
