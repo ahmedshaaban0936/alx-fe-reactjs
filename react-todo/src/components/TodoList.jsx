@@ -1,59 +1,65 @@
 import React, { useState } from 'react';
-import { render, screen, fireEvent } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
-import TodoList from '../components/TodoList';
-
-
-// Initial static todos
-const initialTodos = [
-  { id: 1, text: 'Learn React', completed: false },
-  { id: 2, text: 'Learn Testing', completed: false },
-];
 
 const TodoList = () => {
-  const [todos, setTodos] = useState(initialTodos);
+  // Initialize state with a few todos
+  const [todos, setTodos] = useState([
+    { id: 1, text: 'Learn React', completed: false },
+    { id: 2, text: 'Build a React App', completed: false },
+  ]);
+  
+  // State for new todo input
   const [newTodo, setNewTodo] = useState('');
 
-  const handleAddTodo = (e) => {
-    e.preventDefault();
-    if (newTodo.trim()) {
-      setTodos([...todos, { id: Date.now(), text: newTodo, completed: false }]);
-      setNewTodo('');
-    }
+  // Method to add a new todo
+  const addTodo = () => {
+    if (newTodo.trim() === '') return; // Avoid adding empty todos
+
+    const newTodoItem = {
+      id: Date.now(), // Unique id
+      text: newTodo,
+      completed: false,
+    };
+
+    setTodos([...todos, newTodoItem]);
+    setNewTodo(''); // Clear input field
   };
 
-  const handleToggleTodo = (id) => {
+  // Method to toggle the completion status of a todo
+  const toggleTodo = (id) => {
     setTodos(todos.map(todo =>
       todo.id === id ? { ...todo, completed: !todo.completed } : todo
     ));
   };
 
-  const handleDeleteTodo = (id) => {
+  // Method to delete a todo
+  const deleteTodo = (id) => {
     setTodos(todos.filter(todo => todo.id !== id));
   };
 
   return (
     <div>
-      <form onSubmit={handleAddTodo}>
-        <input
-          type="text"
-          value={newTodo}
-          onChange={(e) => setNewTodo(e.target.value)}
-          placeholder="Add a new todo"
-        />
-        <button type="submit">Add Todo</button>
-      </form>
+      <h1>Todo List</h1>
+      <input
+        type="text"
+        value={newTodo}
+        onChange={(e) => setNewTodo(e.target.value)}
+        placeholder="Add a new todo"
+      />
+      <button onClick={addTodo}>Add Todo</button>
+      
       <ul>
         {todos.map(todo => (
-          <li
-            key={todo.id}
-            onClick={() => handleToggleTodo(todo.id)}
-            style={{ textDecoration: todo.completed ? 'line-through' : 'none' }}
-          >
-            {todo.text}
-            <button onClick={(e) => { e.stopPropagation(); handleDeleteTodo(todo.id); }}>
-              Delete
-            </button>
+          <li key={todo.id}>
+            <span
+              style={{
+                textDecoration: todo.completed ? 'line-through' : 'none',
+                cursor: 'pointer',
+              }}
+              onClick={() => toggleTodo(todo.id)}
+            >
+              {todo.text}
+            </span>
+            <button onClick={() => deleteTodo(todo.id)}>Delete</button>
           </li>
         ))}
       </ul>
