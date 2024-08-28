@@ -1,5 +1,5 @@
 import React from 'react';
-import { useFormik, Formik, Form, Field, ErrorMessage } from 'formik';
+import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 
 const FormikForm = () => {
@@ -12,13 +12,13 @@ const FormikForm = () => {
       }}
       validationSchema={Yup.object({
         username: Yup.string()
-          .required('Username is required'),
+          .required('Username is required'),  // Validation: String and required
         email: Yup.string()
           .email('Invalid email address')
-          .required('Email is required'),
+          .required('Email is required'),  // Validation: String and required
         password: Yup.string()
           .min(6, 'Password must be at least 6 characters')
-          .required('Password is required'),
+          .required('Password is required'),  // Validation: String and required
       })}
       onSubmit={(values) => {
         console.log('Form Submitted:', values);
