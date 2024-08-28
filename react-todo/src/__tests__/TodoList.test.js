@@ -3,6 +3,16 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import TodoList from '../components/TodoList';
 
+test('renders TodoList component with initial todos', () => {
+  render(<TodoList />);
+
+  // Check if initial todos are rendered
+  expect(screen.getByText(/Build a React App/i)).toBeInTheDocument();
+
+  // Check if input and button are rendered
+  expect(screen.getByPlaceholderText(/Add a new todo/i)).toBeInTheDocument();
+  expect(screen.getByText(/Add Todo/i)).toBeInTheDocument();
+});
 test('renders TodoList component', () => {
   render(<TodoList />);
   expect(screen.getByPlaceholderText(/Add a new todo/i)).toBeInTheDocument();
