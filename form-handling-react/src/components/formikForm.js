@@ -2,18 +2,12 @@ import React from 'react';
 import { formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 
+validationSchema={Yup.object({
+  username: Yup.string().required('Username is required'),
+  email: Yup.string().email('Invalid email address').required('Email is required'),
+  password: Yup.string().min(6, 'Password must be at least 6 characters').required('Password is required'),
+})}
 
-// Validation schema with Yup
-const validationSchema = Yup.object({
-  username: Yup.string()
-    .required('Username is required'),  // String and required validation for username
-  email: Yup.string()
-    .email('Invalid email address')
-    .required('Email is required'),  // String, email format, and required validation for email
-  password: Yup.string()
-    .min(6, 'Password must be at least 6 characters')
-    .required('Password is required')  // String, minimum length, and required validation for password
-});
 
 const formikForm = () => {
   return (
