@@ -27,8 +27,8 @@ function App() {
           } 
         />
         <Route path="/login" element={<Login />} />
+        <Route path="/blog/:id" element={<BlogPost />} /> {/* Define the dynamic route */}
         <Route path="*" element={<NotFound />} />
-        <Route path="/blog/:postId" element={<Blog />} />
       </Routes>
     </Router>
   );

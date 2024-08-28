@@ -1,15 +1,15 @@
-// src/components/Blog.jsx
 import React from 'react';
 import { useParams } from 'react-router-dom';
 
-const Blog = () => {
-  const { postId } = useParams();
+const BlogPost = () => {
+  const { id } = useParams();
+  
   return (
     <div>
-      <h1>Blog Post {postId}</h1>
-      <p>Content for blog post {postId}</p>
+      <h1>Blog Post {id}</h1>
+      <p>Content for blog post with ID {id}</p>
     </div>
   );
 };
 
-export default Blog;
+export default BlogPost;
