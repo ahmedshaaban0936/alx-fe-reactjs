@@ -12,13 +12,13 @@ const FormikForm = () => {
       }}
       validationSchema={Yup.object({
         username: Yup.string()
-          .required('Username is required'),  // Validation: String and required
+          .required('Username is required'), // Validation for username
         email: Yup.string()
           .email('Invalid email address')
-          .required('Email is required'),  // Validation: String and required
+          .required('Email is required'), // Validation for email
         password: Yup.string()
           .min(6, 'Password must be at least 6 characters')
-          .required('Password is required'),  // Validation: String and required
+          .required('Password is required'), // Validation for password
       })}
       onSubmit={(values) => {
         console.log('Form Submitted:', values);
@@ -26,17 +26,32 @@ const FormikForm = () => {
     >
       <Form>
         <div>
-          <Field type="text" name="username" placeholder="Username" />
+          <label htmlFor="username">Username</label>
+          <Field
+            type="text"
+            name="username"
+            placeholder="Enter your username"
+          />
           <ErrorMessage name="username" component="p" />
         </div>
 
         <div>
-          <Field type="email" name="email" placeholder="Email" />
+          <label htmlFor="email">Email</label>
+          <Field
+            type="email"
+            name="email"
+            placeholder="Enter your email"
+          />
           <ErrorMessage name="email" component="p" />
         </div>
 
         <div>
-          <Field type="password" name="password" placeholder="Password" />
+          <label htmlFor="password">Password</label>
+          <Field
+            type="password"
+            name="password"
+            placeholder="Enter your password"
+          />
           <ErrorMessage name="password" component="p" />
         </div>
 
