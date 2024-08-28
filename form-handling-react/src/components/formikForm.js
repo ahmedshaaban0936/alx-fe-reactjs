@@ -17,7 +17,7 @@ const validationSchema = Yup.object({
 
 const formikForm = () => {
   return (
-    <formik
+    <Formik
       initialValues={{
         username: '',
         email: '',
@@ -61,7 +61,7 @@ const formikForm = () => {
 
         <button type="submit">Register</button>
       </Form>
-    </formik>
+    </Formik>
   );
 };
 
