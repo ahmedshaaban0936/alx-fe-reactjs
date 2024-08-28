@@ -1,63 +1,28 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import './App.css'
 import React from 'react';
 import RecipeList from './components/RecipeList';
 import AddRecipeForm from './components/AddRecipeForm';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import RecipeDetails from './components/RecipeDetails';
 import SearchBar from './components/SearchBar';
-
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import SearchBar from './components/SearchBar';
-import RecipeList from './components/RecipeList';
-import RecipeDetails from './components/RecipeDetails';
 import FavoritesList from './components/FavoritesList';
 import RecommendationsList from './components/RecommendationsList';
 
-function App() {
-  return (
-    <Router>
-      <div className="App">
-        <SearchBar />
-        <Routes>
-          <Route path="/" element={<RecipeList />} />
-          <Route path="/recipes/:id" element={<RecipeDetails />} />
-        </Routes>
-        <FavoritesList />
-        <RecommendationsList />
-      </div>
-    </Router>
-  );
-}
 
 function App() {
   return (
     <Router>
-      <div className="App">
+       <div className="App">
         <SearchBar />
         <Routes>
           <Route path="/" element={<RecipeList />} />
           <Route path="/recipes/:id" element={<RecipeDetails />} />
+          <FavoritesList />
+          <RecommendationsList />
         </Routes>
       </div>
-    </Router>
-  );
-}
-
-function App() {
-  return (
-    <div className="App">
-      <SearchBar />
-      <RecipeList />
-    </div>
-  );
-}
-function App() {
-  return (
-    <Router>
       <div>
         <h1>Recipe Sharing Application</h1>
         <AddRecipeForm />
