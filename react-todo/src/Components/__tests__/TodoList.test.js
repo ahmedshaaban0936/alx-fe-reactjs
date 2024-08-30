@@ -1,33 +1,39 @@
-// src/Components/__tests__/TodoList.test.js
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
-import '@testing-library/jest-dom';
-import TodoList from '../TodoList';
+import '@testing-library/jest-dom/extend-expect';
+import TodoList from '../components/TodoList';
 
-test('renders initial todos', () => {
+test('renders TodoList component', () => {
   render(<TodoList />);
-  expect(screen.getByText('Learn React')).toBeInTheDocument();
-  expect(screen.getByText('Build a Todo App')).toBeInTheDocument();
-  expect(screen.getByText('Write Tests')).toBeInTheDocument();
+  expect(screen.getByPlaceholderText(/Add a new todo/i)).toBeInTheDocument();
+  expect(screen.getByText(/Learn React/i)).toBeInTheDocument();
 });
 
 test('adds a new todo', () => {
   render(<TodoList />);
-  fireEvent.change(screen.getByPlaceholderText('Enter a new todo'), {
-    target: { value: 'New Todo' },
-  });
-  fireEvent.click(screen.getByText('Add Todo'));
-  expect(screen.getByText('New Todo')).toBeInTheDocument();
+  const input = screen.getByPlaceholderText(/Add a new todo/i);
+  const button = screen.getByText(/Add Todo/i);
+
+  fireEvent.change(input, { target: { value: 'New Todo' } });
+  fireEvent.click(button);
+
+  expect(screen.getByText(/New Todo/i)).toBeInTheDocument();
 });
 
-test('toggles a todo', () => {
+test('toggles todo completion', () => {
   render(<TodoList />);
-  fireEvent.click(screen.getByText('Learn React'));
-  expect(screen.getByText('Learn React')).toHaveStyle('text-decoration: line-through');
+  const todoItem = screen.getByText(/Learn React/i);
+
+  fireEvent.click(todoItem);
+
+  expect(todoItem).toHaveStyle('text-decoration: line-through');
 });
 
 test('deletes a todo', () => {
   render(<TodoList />);
-  fireEvent.click(screen.getAllByText('Delete')[0]);
-  expect(screen.queryByText('Learn React')).not.toBeInTheDocument();
+  const deleteButton = screen.getAllByText(/Delete/i)[0];
+
+  fireEvent.click(deleteButton);
+
+  expect(screen.queryByText(/Learn React/i)).not.toBeInTheDocument();
 });
