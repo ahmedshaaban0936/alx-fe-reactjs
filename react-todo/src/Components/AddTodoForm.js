@@ -1,24 +1,28 @@
-// src/Components/TodoList.js
-const AddTodoForm = ({ addTodo }) => {
-    const [value, setValue] = useState('');
-  
-    const handleSubmit = (e) => {
-      e.preventDefault();
-      if (!value.trim()) return;
-      addTodo(value);
-      setValue('');
-    };
-  
-    return (
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          value={value}
-          placeholder="Enter a new todo"  // Ensure this matches the test
-          onChange={(e) => setValue(e.target.value)}
-        />
-        <button type="submit">Add Todo</button>
-      </form>
-    );
+import React, { useState } from 'react';
+
+const AddTodoForm = ({ onAddTodo }) => {
+  const [newTodo, setNewTodo] = useState('');
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    if (newTodo.trim() !== '') {
+      onAddTodo(newTodo);
+      setNewTodo('');
+    }
   };
-  
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <input
+        type="text"
+        value={newTodo}
+        onChange={(event) => setNewTodo(event.target.value)}   
+
+        placeholder="Add a new todo"
+      />
+      <button type="submit">Add</button>
+    </form>
+  );
+};
+
+export default AddTodoForm;
