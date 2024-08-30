@@ -43,13 +43,8 @@
     "jest": "^27.5.1",
     "jest-environment-jsdom": "^29.7.0"
   },
-  "jest": {
-    "setupFilesAfterEnv": [
-      "<rootDir>/src/setupTests.js"
-    ],
-    "testMatch": [
-      "**/__tests__/**/*.js?(x)",
-      "**/?(*.)+(spec|test).js?(x)"
-    ]
-  }
+  "testMatch": [
+    "**/__tests__/**/*.js?(x)",
+    "**/?(*.)+(spec|test).js?(x)"
+  ]
 }

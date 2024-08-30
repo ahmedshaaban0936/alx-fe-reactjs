@@ -4,5 +4,6 @@ module.exports = {
     },
     moduleFileExtensions: ["js", "jsx"],
     setupFilesAfterEnv: ["<rootDir>/src/setupTests.js"],
+    testEnvironment: "jsdom",
   };
   
