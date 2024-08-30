@@ -48,8 +48,8 @@
     "**/?(*.)+(spec|test).js?(x)"
   ],
   "jest": {
-  "setupFilesAfterEnv": [
-    "<rootDir>/src/setupTests.js"
-  ]
-}
+    "setupFilesAfterEnv": [
+      "<rootDir>/src/setupTests.js"
+    ]
+  }
 }
