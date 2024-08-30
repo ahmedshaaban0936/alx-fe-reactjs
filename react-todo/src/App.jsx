@@ -9,14 +9,6 @@ import '@testing-library/jest-dom/extend-expect';
 import TodoList from './TodoList';
 
 function App() {
-  return (
-    <div className="App">
-      <TodoList />
-    </div>
-  );
-}
-
-function App() {
   const [count, setCount] = useState(0)
 
   return (
