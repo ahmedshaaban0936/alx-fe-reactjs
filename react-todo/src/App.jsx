@@ -3,7 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import React from 'react';
-import TodoList from './components/TodoList'; // Import the TodoList component
+import TodoList from './Components/TodoList'; // Import the TodoList component
 import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import TodoList from './TodoList';

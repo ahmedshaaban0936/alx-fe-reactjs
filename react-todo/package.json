@@ -6,12 +6,11 @@
   "scripts": {
     "test": "jest",
     "dev": "vite",
-    "build": "vite build",
+    "build": "react-scripts build",
     "lint": "eslint .",
     "preview": "vite preview",
-  "start": "react-scripts start",
-  "build": "react-scripts build",
-  "eject": "react-scripts eject"
+    "start": "react-scripts start",
+    "eject": "react-scripts eject"
   },
   "jest": {
     "transform": {
