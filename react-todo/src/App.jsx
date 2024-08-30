@@ -6,6 +6,15 @@ import React from 'react';
 import TodoList from './components/TodoList'; // Import the TodoList component
 import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
+import TodoList from './TodoList';
+
+function App() {
+  return (
+    <div className="App">
+      <TodoList />
+    </div>
+  );
+}
 
 function App() {
   const [count, setCount] = useState(0)
