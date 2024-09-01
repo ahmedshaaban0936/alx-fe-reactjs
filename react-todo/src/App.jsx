@@ -5,7 +5,8 @@ import './App.css'
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
-import TodoList from './TodoList';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';import React from 'react';
+import TodoList from './components/TodoList';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
     </Router>
   );
 }
+
 function App() {
   const [count, setCount] = useState(0)
 
