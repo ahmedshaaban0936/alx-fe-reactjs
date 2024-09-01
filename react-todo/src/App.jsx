@@ -1,14 +1,15 @@
 import React from 'react';
-import TodoList from './Components/TodoList';
+import TodoList from './components/TodoList';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Todo List Application</h1>
-      </header>
-      <TodoList />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<TodoList />} />
+        {/* Add other routes here */}
+      </Routes>
+    </Router>
   );
 }
 
