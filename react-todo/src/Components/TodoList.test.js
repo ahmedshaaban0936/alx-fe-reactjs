@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import TodoList from '../components/TodoList'; // Adjust the path as necessary
+import TodoList from '../components /TodoList'; // Adjust the path as necessary
 
 // Test initial rendering of the TodoList component
 test('renders TodoList component', () => {
@@ -9,7 +9,6 @@ test('renders TodoList component', () => {
   expect(screen.getByText(/Todo List/i)).toBeInTheDocument();
 });
 
-// Test initial todos are rendered
 test('renders initial todos', () => {
   render(<TodoList />);
   expect(screen.getByText(/Learn React/i)).toBeInTheDocument();
