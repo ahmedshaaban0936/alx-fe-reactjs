@@ -3,11 +3,21 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import React from 'react';
-import TodoList from './Components/TodoList'; // Import the TodoList component
 import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import TodoList from './TodoList';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<TodoList />} />
+        {/* Add other routes here */}
+      </Routes>
+    </Router>
+  );
+}
 function App() {
   const [count, setCount] = useState(0)
 
