@@ -9,6 +9,7 @@ test('renders TodoList component', () => {
   expect(screen.getByText(/Todo List/i)).toBeInTheDocument();
 });
 
+// Test initial todos are rendered
 test('renders initial todos', () => {
   render(<TodoList />);
   expect(screen.getByText(/Learn React/i)).toBeInTheDocument();
